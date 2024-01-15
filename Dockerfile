@@ -5,7 +5,7 @@ FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 
 # Copy the contents of the local 'app' directory to the working directory
-COPY /home/rifki_ramadhan/event-iccom1/webstatis .
+COPY . /app
 
 # Expose port 80 to allow external access
 EXPOSE 80
