@@ -1,0 +1,19 @@
+steps:
+  # Build the Docker image
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/dev-rifki-karim-ramadhan/webstatic', '.']
+
+  # Push the Docker image to Artifact Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/dev-rifki-karim-ramadhan/webstatic']
+
+  # Deploy to Cloud Run
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'run'
+      - 'deploy'
+      - 'web-statis-run'
+      - '--image=gcr.io/dev-rifki-karim-ramadhan/webstatic'
+      - '--platform=managed'
+      - '--region=asia-southeast2'
+      # Add additional Cloud Run deployment options as needed
