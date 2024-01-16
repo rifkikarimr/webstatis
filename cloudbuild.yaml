@@ -17,6 +17,3 @@ steps:
       - '--platform=managed'
       - '--region=asia-southeast2'
       # Add additional Cloud Run deployment options as needed
-
-  images :
-    - gcr.io/dev-rifki-karim-ramadhan/webstatic
