@@ -6,7 +6,7 @@ steps:
     args: ['push', 'gcr.io/dev-rifki-karim-ramadhan/webstatis:$SHORT_SHA']
 
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['run', 'deploy', 'webstat-example', '--image', 'gcr.io/dev-rifki-karim-ramadhan/webstatis:$SHORT_SHA', '--platform', 'managed']
+    args: ['run', 'deploy', 'webstat-example', '--image', 'gcr.io/dev-rifki-karim-ramadhan/webstatis:$SHORT_SHA', '--platform', 'managed', "--region", "asia-southeast2", "--port", "80"]
 
 images:
-  - 'gcr.io/$PROJECT_ID/your-image-name:$SHORT_SHA'
+  - 'gcr.io/dev-rifki-karim-ramadhan/webstatis:$SHORT_SHA'
