@@ -2,7 +2,7 @@
 FROM node:14
 
 # Set the working directory to /app
-WORKDIR /app
+WORKDIR /public
 
 # Copy package.json and package-lock.json to the working directory
 COPY package.json ./
@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Make port 3000 available to the world outside this container
-EXPOSE 3000
+EXPOSE 8080
 
 # Define environment variable
 ENV NODE_ENV production
