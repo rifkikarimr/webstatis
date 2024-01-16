@@ -2,7 +2,7 @@
   "name": "neilsamaa.github.io-main",
   "version": "1.0.0",
   "description": "",
-  "main": "/public/server.js",
+  "main": "src/public/server.js",
   "scripts": {
     "start": "node src/public/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
