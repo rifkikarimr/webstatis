@@ -11,4 +11,4 @@ steps:
 # Deploy container image to Cloud Run
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['run', 'deploy', 'webstat-example', '--image', 'gcr.io/dev-rifki-karim-ramadhan/webstat:$SHORT_SHA', '--region', 'asia-southeast2', '--platform', 'managed', "--allow-unauthenticated", "--port", "8080"]
+  args: ['run', 'deploy', 'webstat', '--image', 'gcr.io/dev-rifki-karim-ramadhan/webstat:$SHORT_SHA', '--region', 'asia-southeast2', '--platform', 'managed', "--allow-unauthenticated", "--port", "8080"]
