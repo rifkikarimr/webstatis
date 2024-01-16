@@ -1,14 +1,23 @@
-# Use a lightweight web server image
-FROM nginx:alpine
+# Use an official Node.js runtime as a parent image
+FROM node:14
 
-# Set the working directory to /usr/share/nginx/html
-WORKDIR /usr/share/nginx/html
+# Set the working directory to /app
+WORKDIR /app
 
-# Copy the contents of the local 'app' directory to the working directory
-COPY . /app
+# Copy package.json and package-lock.json to the working directory
+COPY package.json ./
 
-# Expose port 80 to allow external access
-EXPOSE 80
+# Install app dependencies
+RUN npm install
 
-# Command to start the nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# Copy the current directory contents into the container at /app
+COPY . .
+
+# Make port 3000 available to the world outside this container
+EXPOSE 3000
+
+# Define environment variable
+ENV NODE_ENV production
+
+# Run app.js when the container launches
+CMD ["node", "/public/server.js"]

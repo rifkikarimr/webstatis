@@ -9,7 +9,7 @@ steps:
 
   # Deploy to Cloud Run
   - name: 'gcr.io/cloud-builders/gcloud'
-    args:
+    args: 
       - 'run'
       - 'deploy'
       - 'web-statis-run'
