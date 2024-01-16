@@ -20,4 +20,4 @@ EXPOSE 3000
 ENV NODE_ENV production
 
 # Run app.js when the container launches
-CMD ["node", "/public/server.js"]
+CMD ["node", "server.js"]
