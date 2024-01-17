@@ -6,9 +6,9 @@ steps:
 
 # Push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/dev-rifki-karim-ramadhan/webstat']
+  args: ['push', 'gcr.io/dev-rifki-karim-ramadhan/webstat:latest']
   id: Pushing the image to registry
 # Deploy container image to Cloud Run
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'webstat', '--image', 'gcr.io/dev-rifki-karim-ramadhan/webstat', '--region', 'asia-southeast2', '--platform', 'managed']
+  args: ['beta', 'run', 'deploy', 'webstat', '--image', 'gcr.io/dev-rifki-karim-ramadhan/webstat:latest', '--region', 'asia-southeast2', '--platform', 'managed']
